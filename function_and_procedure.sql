@@ -2,13 +2,22 @@
 --following arguments: title, description, release_year, language_id, rental_duration,
 --rental_rate, length, replace_cost, rating
 
-CREATE OR REPLACE PROCEDURE add_film(title VARCHAR, description VARCHAR, release_year INTEGER, language_id INTEGER, rental_duration INTEGER, rental_rate NUMERIC(5, 2), length INTEGER, replacement_cost NUMERIC(5, 2), rating public.mpaa_rating)
+CREATE OR REPLACE PROCEDURE add_film(
+							title VARCHAR, 
+							description VARCHAR, 
+							release_year INTEGER, 
+							language_id INTEGER, 
+							rental_duration INTEGER, 
+							rental_rate NUMERIC(5, 2), 
+							length INTEGER, 
+							replacement_cost NUMERIC(5, 2), 
+							rating public.mpaa_rating)
 LANGUAGE plpgsql
 AS $$
 BEGIN
 	INSERT INTO film(
 		title,
-	description, 
+		description, 
 		release_year,
 		language_id,
 		rental_duration,
